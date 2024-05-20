@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const startMonth = new Date(2022, 10); // November 2022 (Month is 0-indexed)
     const endMonth = new Date(2025, 10); // November 2025
-    const totalMonths = (endMonth.getFullYear() - startMonth.getFullYear()) * 12 + (endMonth.getMonth() - startMonth.getMonth()) + 1;
-    
+    const totalMonths = (endMonth.getFullYear() - startMonth.getFullYear()) * 12 + (endMonth.getMonth() - startMonth.getMonth());
+
     const currentDate = new Date();
     const passedMonths = (currentDate.getFullYear() - startMonth.getFullYear()) * 12 + (currentDate.getMonth() - startMonth.getMonth());
 
