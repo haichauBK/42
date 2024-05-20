@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const startMonth = new Date(2022, 10); // November 2022 (Month is 0-indexed)
     const endMonth = new Date(2025, 10); // November 2025
-    const totalMonths = (endMonth.getFullYear() - startMonth.getFullYear()) * 12 + (endMonth.getMonth() - startMonth.getMonth());
+    const totalMonths = (endMonth.getFullYear() - startMonth.getFullYear()) * 12 + (endMonth.getMonth() - startMonth.getMonth()) + 1;
 
     const currentDate = new Date();
-    const passedMonths = (currentDate.getFullYear() - startMonth.getFullYear()) * 12 + (currentDate.getMonth() - startMonth.getMonth());
+    const passedMonths = (currentDate.getFullYear() - startMonth.getFullYear()) * 12 + (currentDate.getMonth() - startMonth.getMonth()) + 1;
 
-    let progress = Math.round((passedMonths / totalMonths) * 100);
+    let progress = Math.ceil((passedMonths / totalMonths) * 100);
     if (progress > 100) progress = 100;
 
     document.getElementById('progress-number').innerText = `${progress}%`;
